@@ -15,3 +15,6 @@
 
 ## Docker Installation
 - Install Docker desktop
+- If you went with `Option#02` then Run Command: `docker run -e POSTGRES_PASSWORD=mysecretpassword -p 5432:5432 postgres`
+- Build the Image: `docker build -t crud-project .`
+- Run the Image: `docker run -p 3000:3000 crud-project .`
