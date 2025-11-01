@@ -15,8 +15,11 @@
 
 ## Docker Installation
 - Install Docker desktop
-- If you went with `Option#02` then Run Command: 
-    - Create a Network: `docker network create crud-network`
-    - Run Postgres Locally: `docker run --name crud-postgres -e POSTGRES_PASSWORD=mysecretpassword -p 5432:5432 --network crud-network postgres`
-    - Build the Image: `docker build --network=host -t crud-project .`
-    - Run the Image: `docker run -e DATABASE_URL=postgres://postgres:mysecretpassword@crud-postgres:5432/postgres --network crud-network -p 3000:3000 crud-project`
+- Create a Network: `docker network create crud-network`
+- Run Postgres Locally: `docker run --name crud-postgres -e POSTGRES_PASSWORD=mysecretpassword -p 5432:5432 --network crud-network postgres`
+- Build the Image: `docker build -t crud-project .`
+- Run the Image: `docker run -e DATABASE_URL=postgres://postgres:mysecretpassword@crud-postgres:5432/postgres --network crud-network -p 3000:3000 crud-project`
+
+## Docker Compose Installation
+- Install docker, docker-compose
+- Run `docker-compose up`
